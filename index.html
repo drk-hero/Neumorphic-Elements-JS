@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rahmat saghafi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/local.css">
+</head>
+
+<body class="bg-white-bac">
+    <main class="container">
+        <section class="row rowbyrow">
+            <div class="col-10 col-md-6 col-lg-4 my-3 my-lg-1 scone">
+                <div class="search-box">
+                    <input onkeyup="_search()" id="searchh" type="text" placeholder="Search name...">
+                    <ul class="ul-seach-box">
+                        <li>ali</li>
+                        <li>mohammad</li>
+                        <li>rahmat</li>
+                        <li>sana</li>
+                        <li>kamand</li>
+                        <li>sara</li>
+                        <li>felora</li>
+                        <li>yasaman</li>
+                        <li>ebi</li>
+                        <li>daryoush</li>
+                        <li>omid</li>
+                        <li>poriya</li>
+                        <li>qolam</li>
+                        <li>ali ahmad</li>
+                        <li>barsa</li>
+                        <li>danyal</li>
+                        <li>jalal</li>
+                        <li>parsa ghorbanian</li>
+                    </ul>
+                </div>
+                <div class="radio-adn-btn row">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">fmale</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">male</label>
+                    </div>
+                </div>
+                <div class="switches-iphone">
+                    <div class="row">
+                        <div onclick="_clickI()" id="swich1">
+                            <span></span>
+                        </div>
+                        <!-- <div onclick="_clickI()" id="swich1">
+                            <span></span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-md-6 col-lg-4 my-3 my-lg-1 sctwo">
+                <h3 id="clock-one"></h3>
+                <div class="clock">
+                    <span class="secend"></span>
+                    <span class="minet"></span>
+                    <span class="hours"></span>
+                </div>
+            </div>
+            <div class="col-10 col-md-6 col-lg-4 my-3 my-lg-1 scthree">
+                <div onclick="_clicksw()" class="play-shadow">
+                    <i id="playorpase" class="bi bi-pause"></i>
+                    <span></span>
+                    <span class="puse-shadow-2"></span>
+                </div>
+                <div class="label-delet">
+                    <div class="row label-delet-body">
+                        <div class="col">
+                            <i class="bi bi-x-diamond-fill"></i>
+                        </div>
+                        <p class="col">Neumorphic Design</p>
+                        <div onclick="_delet()" class="col">
+                            <i class="bi bi-x-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+<script>
+    // search
+    let _li = document.querySelectorAll('.ul-seach-box>li')
+
+    function _search() {
+        let _flag = 0
+        if (
+            (document.getElementById('notF')) != null
+        ) {
+            document.getElementById('notF').remove()
+        }
+        let _vale_seach = document.getElementById('searchh').value
+        if (_vale_seach.length != 0) {
+            for (i = 0; i < _li.length; i++) {
+                _li[i].style.display = 'none'
+                if (
+                    ((_li[i].innerHTML).indexOf(_vale_seach)) != -1
+                ) {
+                    _li[i].style.display = 'block'
+                    _flag++
+                }
+            }
+            if (_flag == 0) {
+                _notFound = document.createElement('li')
+                _notFound.setAttribute('id', 'notF')
+                _notFound.innerHTML = 'Not Found...'
+                _notFound.style.display = 'block'
+                _notFound.style.color = 'black'
+                document.querySelector('.ul-seach-box').appendChild(_notFound)
+            }
+        } else {
+            for (i = 0; i < _li.length; i++) {
+                _li[i].style.display = 'none'
+            }
+        }
+    }
+
+
+    // click iphone
+    let x = 0
+
+    function _clickI() {
+        let Id_swich = document.getElementById('swich1')
+        if (x == 0) {
+            x++
+            Id_swich.style.background = 'linear-gradient(330deg, #5b0eeb 0%, #5b0eeb 50%, #8abdff) 100%'
+            Id_swich.querySelector('span').style.backgroundColor = ('#E4EBF5')
+            Id_swich.querySelector('span').style.left = ('60px')
+        } else if (x == 1) {
+            x--
+            Id_swich.style.background = 'transparent'
+            Id_swich.querySelector('span').style.backgroundColor = ('#9baacf')
+            Id_swich.querySelector('span').style.left = ('5px')
+
+        }
+
+    }
+    // clock
+    _clock()
+    setInterval(_clock, 1000);
+
+    function _clock() {
+        let setTimeTo = new Date()
+        document.querySelector('.clock .secend').style.transform = 'rotate(' + ((setTimeTo.getSeconds()) * 6) + 'deg)'
+        document.querySelector('.clock .minet').style.transform = 'rotate(' + (((setTimeTo.getMinutes()) * 60) * .1) + 'deg)'
+        document.querySelector('.clock .minet').style.transform = 'rotate(' + (((setTimeTo.getMinutes()) * 60) * .1) + 'deg)'
+        hourse_ = ((setTimeTo.getHours()) * 3600) + ((setTimeTo.getMinutes()) * 60) + (setTimeTo.getSeconds())
+        document.querySelector('.clock .hours').style.transform = 'rotate(' + (hourse_ * .008) + 'deg)'
+        document.getElementById('clock-one').innerHTML = setTimeTo.toLocaleTimeString()
+    }
+    // play shadows
+    let numflag = 0
+
+    function _clicksw() {
+        let _i_icon = document.getElementById('playorpase')
+        console.log(_i_icon)
+        let _shadowS = document.querySelectorAll('.play-shadow>span')
+        _i_icon.classList.toggle('bi-play-fill')
+        _shadowS[0].classList.toggle('puse-shadow')
+        _shadowS[1].classList.toggle('puse-shadow')
+    }
+    // delet html
+    function _delet() {
+        let _full_html = document.getElementsByClassName('label-delet')[0]
+        _full_html.remove()
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,293 @@
+            *,
+             ::after,
+             ::before {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            }
+            
+            li {
+                list-style-type: none;
+            }
+            
+            a {
+                text-decoration: none;
+            }
+            
+            .bg-white-bac {
+                width: 100%;
+                min-height: 100vh;
+                background-color: #e4ebf5;
+                .container {
+                    margin: 150px auto;
+                    .rowbyrow {
+                        border: 2px solid rgba(245, 245, 245, 0.568);
+                        border-radius: 10px;
+                        padding: 40px;
+                        box-shadow: 0.8rem 0.8rem 1.4rem #c8d0e7, -0.2rem -0.2rem 1.8rem #ffffff;
+                        // justify-content: center;
+                        // align-items: center;
+                        // scone start
+                        .scone {
+                            .search-box {
+                                width: 100%;
+                                input {
+                                    border: none;
+                                    background: none;
+                                    padding: 10px;
+                                    font-size: 17px;
+                                    border-radius: 7px;
+                                    box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #ffffff;
+                                    color: #9baacf;
+                                    position: relative;
+                                    &:focus {
+                                        outline: none;
+                                        box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+                                    }
+                                }
+                                .ul-seach-box {
+                                    width: 60%;
+                                    max-height: 115px;
+                                    overflow-y: scroll;
+                                    margin: 0;
+                                    padding: 10px;
+                                    color: #9baacf;
+                                    background-color: #e4ebf5;
+                                    li {
+                                        display: none;
+                                        padding: 10px 0;
+                                        font-size: 19px;
+                                        border-bottom: 1px solid #b5b5b5;
+                                        cursor: pointer;
+                                        transition: all .4s;
+                                        padding: 10px;
+                                        border-radius: 3px;
+                                        &:hover {
+                                            background-color: #9baacf;
+                                            color: black;
+                                        }
+                                    }
+                                }
+                            }
+                            .radio-adn-btn {
+                                margin-top: 50px;
+                                padding-left: 5px;
+                                .form-check.form-check-inline {
+                                    display: flex;
+                                    width: 120px;
+                                    flex-flow: wrap row;
+                                    align-items: center;
+                                    justify-content: center;
+                                    .form-check-input {
+                                        width: 30px;
+                                        height: 30px;
+                                        border: none;
+                                        box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.1rem -0.1rem 0.3rem #ffffff;
+                                        position: relative;
+                                        &::after {
+                                            content: "";
+                                            transition: all .3s;
+                                            width: 15px;
+                                            height: 16px;
+                                            position: absolute;
+                                            right: 7px;
+                                            top: 7px;
+                                            border-radius: 50%;
+                                            background-color: #b5b5b5;
+                                        }
+                                        &:checked {
+                                            box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #ffffff;
+                                            background-color: transparent;
+                                            &::after {
+                                                background-color: #6d5dfc;
+                                            }
+                                            ~.form-check-label {
+                                                color: #6d5dfc;
+                                            }
+                                        }
+                                    }
+                                    .form-check-label {
+                                        padding-left: 10px;
+                                        font-size: 18px;
+                                        color: #b5b5b5;
+                                        font-weight: 600;
+                                        padding-top: 6px;
+                                    }
+                                }
+                            }
+                            .switches-iphone {
+                                margin-top: 50px;
+                                #swich1 {
+                                    margin: 0 15px;
+                                    width: 100px;
+                                    height: 40px;
+                                    background: rgba(255, 255, 255, 0);
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                    border-radius: 1.5rem;
+                                    position: relative;
+                                    box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+                                    transition: all .5s;
+                                    span {
+                                        display: flex;
+                                        width: 35px;
+                                        height: 35px;
+                                        border-radius: 50%;
+                                        background-color: #9baacf;
+                                        position: absolute;
+                                        left: 5px;
+                                        top: 3px;
+                                        transition: all .5s;
+                                        // background-color: ;
+                                    }
+                                }
+                            }
+                        }
+                        // scone end
+                        // sctwo start
+                        .sctwo {
+                            #clock-one {
+                                text-align: center;
+                                color: #7c70ea;
+                                font-weight: 600;
+                                font-size: 26px;
+                                margin: 8px 0;
+                            }
+                            .clock {
+                                width: 200px;
+                                height: 200px;
+                                box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+                                border-radius: 50%;
+                                // border: 2px solid red;
+                                margin: 15px auto;
+                                position: relative;
+                                &::before {
+                                    content: '';
+                                    width: 100px;
+                                    height: 100px;
+                                    position: absolute;
+                                    top: 25%;
+                                    left: 26%;
+                                    border-radius: 50%;
+                                    box-shadow: inset 1px 1px 1px #c8d0e7, inset -1px -1px 1px #ffffff;
+                                }
+                                &::after {
+                                    content: '';
+                                    display: block;
+                                    width: 15px;
+                                    height: 15px;
+                                    border-radius: 50%;
+                                    background-color: #6d5dfc;
+                                    position: absolute;
+                                    top: 45%;
+                                    left: 47%;
+                                    z-index: 2;
+                                }
+                                >* {
+                                    border-radius: 1px 1px 0 0;
+                                    width: 2px;
+                                    display: flex;
+                                    position: absolute;
+                                    bottom: 50%;
+                                    left: 50%;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin: auto;
+                                    transform-origin: bottom;
+                                }
+                                .secend {
+                                    height: 80px;
+                                    background-color: #6d5dfc;
+                                }
+                                .minet {
+                                    width: 4px;
+                                    height: 60px;
+                                    background-color: #9baacf;
+                                }
+                                .hours {
+                                    width: 6px;
+                                    height: 40px;
+                                    background-color: #bec8e4;
+                                }
+                            }
+                        }
+                        // sctwo end
+                        // scthree start
+                        .scthree {
+                            .play-shadow {
+                                width: 70px;
+                                height: 70px;
+                                margin: 20px auto;
+                                border-radius: 50%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: #e4ebf5;
+                                box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+                                color: #6d5dfc;
+                                position: relative;
+                                cursor: pointer;
+                                i {
+                                    font-size: 40px;
+                                }
+                                span {
+                                    box-shadow: 0.4rem 0.4rem 0.8rem #c8d0e7, -0.4rem -0.4rem 0.8rem #ffffff;
+                                    animation: playshadow 4s linear 2s infinite;
+                                    width: 70px;
+                                    height: 70px;
+                                    border-radius: 50%;
+                                    z-index: 30;
+                                    filter: blur(1px);
+                                    position: absolute;
+                                }
+                            }
+                            .puse-shadow {
+                                animation-play-state: paused !important;
+                            }
+                            .puse-shadow-2 {
+                                animation-delay: 4s !important;
+                            }
+                            .label-delet {
+                                margin: 50px auto;
+                                width: 200px;
+                                color: #9baacf;
+                                box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+                                padding: 13px;
+                                border-radius: 30px;
+                                .label-delet-body {
+                                    align-items: center;
+                                    justify-content: center;
+                                    .col>.bi-x-diamond-fill {
+                                        color: #6d5dfc;
+                                    }
+                                    p {
+                                        font-size: 15px;
+                                        margin-bottom: 0;
+                                    }
+                                    .col>.bi-x-lg {
+                                        cursor: pointer;
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                        }
+                        // scthree end
+                    }
+                }
+            }
+            
+            @keyframes playshadow {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
